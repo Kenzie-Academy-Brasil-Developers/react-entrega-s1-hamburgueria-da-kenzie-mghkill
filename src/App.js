@@ -1,11 +1,13 @@
 import { useState } from "react";
 import MenuContainer from "./components/MenuContainer";
+import Filter from "./components/Filter";
 import "./App.css";
 
 function App() {
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [inputValue, setInputValue] = useState("");
   const [currentSale, setCurrentSale] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -51,15 +53,46 @@ function App() {
     },
   ]);
 
-  const showProducts = () => {};
-  const handleClick = (productId) => {};
-
+  const showProducts = () => {
+    return inputValue === ""
+      ? products.filter((item) => item)
+      : products.filter((item) =>
+          item.name
+            .toLowerCase()
+            .split()
+            .map((item) => item)
+            .join()
+            .includes(
+              inputValue
+                .toLowerCase()
+                .split()
+                .map((item) => item)
+                .join()
+            )
+        );
+  };
+  const handleClick = (product) => {
+    !filteredProducts.includes(product.id) &&
+      setFilteredProducts([...filteredProducts, product.id]);
+    !filteredProducts.includes(product.id) &&
+      setCurrentSale([...currentSale, product]);
+  };
+  console.log(currentSale);
+  console.log(filteredProducts);
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <article className="App-article">
-        <MenuContainer products={products} />
-      </article>
+      <header className="App-header">
+        <Filter inputValue={inputValue} setInputValue={setInputValue} />
+      </header>
+
+      <main className="App-main">
+        <MenuContainer
+          currentSale={currentSale}
+          setCurrentSale={setCurrentSale}
+          handleClick={handleClick}
+          showProducts={showProducts}
+        />
+      </main>
     </div>
   );
 }

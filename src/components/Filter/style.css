@@ -1,0 +1,45 @@
+.filter-position {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+input {
+  border: none;
+  background: #ffffff;
+  width: 70%;
+}
+input:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+.filter-button {
+  width: 30%;
+}
+.title {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+.title h1 {
+  color: #333333;
+  margin-left: 10%;
+}
+.title h2 {
+  color: #eb5757;
+  margin-left: 5%;
+}
+.input-header {
+  display: flex;
+  width: 365px;
+  height: 60px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+}
+.input-box {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}

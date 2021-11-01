@@ -1,29 +1,21 @@
 .box-products {
-  width: 300px;
-  height: 346px;
-  left: 755px;
-  top: 112px;
   background: #ffffff;
   border: 2px solid #e0e0e0;
-  box-sizing: border-box;
   border-radius: 5px;
   margin: 5px 10px;
 }
 .box {
   display: flex;
-  width: 1080px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  position: relative;
+  width: 50%;
+  height: 100vh;
 }
 
 img {
   width: 162px;
   height: 162px;
-  left: 821px;
-  top: 452px;
 }
 .box-img {
   width: 100%;
@@ -95,9 +87,13 @@ button {
   margin-left: 10px;
   margin-top: 10px;
   justify-content: space-between;
-  position: absolute;
-  padding: 5px;
 }
 .space {
   margin: 5px;
+}
+@media only screen and (min-width: 750px) {
+  .box-products {
+    width: 28%;
+    min-height: 43vh;
+  }
 }
