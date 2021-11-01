@@ -1,6 +1,7 @@
 import Product from "../Product";
 import "./style.css";
 const MenuContainer = ({
+  total,
   currentSale,
   setCurrentSale,
   handleClick,
@@ -12,7 +13,11 @@ const MenuContainer = ({
 
   return (
     <div className="Conteiner">
-      <Product handleClick={handleClick} showProducts={showProducts} />
+      <Product
+        handleClick={handleClick}
+        showProducts={showProducts}
+        currentSale={currentSale}
+      />
       <div className="new-box">
         <div className="conteiner-box">
           <div className="price">Carrinho de compras</div>
@@ -39,6 +44,16 @@ const MenuContainer = ({
                     </div>
                   </div>
                 ))}
+                <div className="total">
+                  <p className="total-value">Total</p>
+                  <p className="total-price">R$ {total.toFixed(2)}</p>
+                </div>
+                <button
+                  className="button-total"
+                  onClick={() => setCurrentSale([])}
+                >
+                  Remover tudo
+                </button>
               </>
             )}
           </div>

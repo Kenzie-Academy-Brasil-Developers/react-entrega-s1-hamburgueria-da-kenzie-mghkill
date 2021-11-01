@@ -48,7 +48,7 @@
   margin: 0 auto;
   margin-top: 35px;
 }
-.conteiner-box p {
+.conteiner-box {
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
@@ -79,4 +79,30 @@ h3 {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+}
+.button-total {
+  width: 343px;
+  height: 60px;
+  background: #e0e0e0;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  color: #828282;
+  margin: 5px;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+}
+.total-value {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #333333;
+}
+.total-price {
+  color: #828282;
 }

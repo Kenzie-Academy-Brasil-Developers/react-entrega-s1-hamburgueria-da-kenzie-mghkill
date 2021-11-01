@@ -7,7 +7,6 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const [currentSale, setCurrentSale] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
-  const [filteredProducts, setFilteredProducts] = useState([]);
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -71,14 +70,14 @@ function App() {
             )
         );
   };
+
   const handleClick = (product) => {
-    !filteredProducts.includes(product.id) &&
-      setFilteredProducts([...filteredProducts, product.id]);
-    !filteredProducts.includes(product.id) &&
+    currentSale.every((item) => item.id !== product.id) &&
       setCurrentSale([...currentSale, product]);
   };
   console.log(currentSale);
-  console.log(filteredProducts);
+  const total = currentSale.reduce((acc, item) => acc + item.price, 0);
+  console.log(currentSale);
   return (
     <div className="App">
       <header className="App-header">
@@ -87,10 +86,13 @@ function App() {
 
       <main className="App-main">
         <MenuContainer
+          total={total}
           currentSale={currentSale}
           setCurrentSale={setCurrentSale}
           handleClick={handleClick}
           showProducts={showProducts}
+          cartTotal={cartTotal}
+          setCartTotal={setCartTotal}
         />
       </main>
     </div>
