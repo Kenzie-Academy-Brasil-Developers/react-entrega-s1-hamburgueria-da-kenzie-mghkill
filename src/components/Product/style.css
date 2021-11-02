@@ -3,19 +3,18 @@
   border: 2px solid #e0e0e0;
   border-radius: 5px;
   margin: 5px 10px;
+  min-width: 60vw;
 }
 .box {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 100vh;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 img {
-  width: 162px;
-  height: 162px;
+  width: 132px;
+  height: 132px;
 }
 .box-img {
   width: 100%;
@@ -71,14 +70,13 @@ button {
   padding: 0px 20px;
   width: 106px;
   height: 40px;
-  left: 20px;
-  top: 133px;
   background: #27ae60;
   border: 2px solid #27ae60;
   box-sizing: border-box;
   border-radius: 8px;
   color: rgb(255, 255, 255);
   cursor: pointer;
+  margin-bottom: 6px;
 }
 .box-position {
   display: flex;
@@ -91,9 +89,27 @@ button {
 .space {
   margin: 5px;
 }
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 600px) {
+  .box {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    overflow-x: none;
+    scroll-behavior: none;
+  }
+  .box-products {
+    min-width: 15vw;
+  }
+}
+@media only screen and (min-width: 900px) {
   .box-products {
     width: 28%;
     min-height: 43vh;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  img {
+    width: 162px;
+    height: 162px;
   }
 }

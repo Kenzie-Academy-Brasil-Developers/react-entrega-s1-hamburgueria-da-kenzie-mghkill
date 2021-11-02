@@ -12,7 +12,7 @@ const MenuContainer = ({
   };
 
   return (
-    <div className="Conteiner">
+    <div className="conteiner">
       <Product
         handleClick={handleClick}
         showProducts={showProducts}

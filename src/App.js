@@ -51,6 +51,7 @@ function App() {
       img: "https://i.ibb.co/QNb3DJJ/milkshake-ovomaltine.png",
     },
   ]);
+  const total = currentSale.reduce((acc, item) => acc + item.price, 0);
 
   const showProducts = () => {
     return inputValue === ""
@@ -75,9 +76,6 @@ function App() {
     currentSale.every((item) => item.id !== product.id) &&
       setCurrentSale([...currentSale, product]);
   };
-  console.log(currentSale);
-  const total = currentSale.reduce((acc, item) => acc + item.price, 0);
-  console.log(currentSale);
   return (
     <div className="App">
       <header className="App-header">

@@ -13,7 +13,9 @@ const Filter = ({ inputValue, setInputValue }) => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
           />
-          <button className="filter-button">Limpar</button>
+          <button className="filter-button" onClick={() => setInputValue("")}>
+            Limpar
+          </button>
         </div>
       </div>
     </div>
