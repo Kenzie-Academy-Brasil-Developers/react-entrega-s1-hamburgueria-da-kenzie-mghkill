@@ -30,7 +30,7 @@ const MenuContainer = ({
             ) : (
               <>
                 {currentSale.map((prod, index) => (
-                  <div className="box-new-products" key={index}>
+                  <div data-aos="fade-up" data-aos-anchor=".other-element" className="box-new-products" key={index}>
                     <div className="img">
                       <img src={prod.img} alt="hamburgueria" />
                     </div>

@@ -7,7 +7,7 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const [currentSale, setCurrentSale] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
-  const [products, setProducts] = useState([
+  const [products] = useState([
     {
       id: 1,
       name: "Hamburguer",
